@@ -4,13 +4,442 @@
   margin: 0;
 }
 
-@font-face {
-  font-family: 'Bai Jamjuree';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Bai Jamjuree'),
-       local('BaiJamjuree-Regular'),
-       url(https://fonts.gstatic.com/s/baijamjuree/v3/LYjBdGzTnYbV9a2iUO8mXQ.woff2) format('woff2');
-  unicode-range: U+0-FFFD;
-  font-display: swap;
+:root {
+  --clr-green-500: hsl(171, 66%, 44%);
+  --clr-blue-100: hsl(233, 100%, 69%);
+  --clr-gray-700: hsl(210, 10%, 33%);
+  --clr-gray-500: hsl(201, 11%, 66%);
+
+  --fw-400: 400;
+  --fw-600: 600;
+
+  --fs-lg: 1.75rem;
+  /* --fs-lg: clamp(1rem, 2vw + 1rem, 1.75rem); */
+  --fs-md: 1.125rem;
+  --fs-sm: 1rem;
+  --fs-xlg: 9.5rem;
+  --fs-xsm: .875rem;
 }
+
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
+  background-color: hsl(0, 0%, 98%);
+  background: url(images/bg-header-desktop.png) no-repeat top center;
+  background-size:contain;
+  background-color: white;
+}
+
+/* font-size for all text */
+.xlg-txt {
+  color: var(--clr-gray-700);
+  font-weight: var(--fw-600);
+}
+
+.lg-txt {
+  font-size: var(--fs-lg);
+  color: var(--clr-gray-700);
+  font-weight: var(--fw-600);
+}
+.md-txt {
+  font-size: var(--fs-md);
+  color: var(--clr-gray-700);
+  font-weight: var(--fw-600);
+}
+.sm-txt {
+  font-size: var(--fs-sm);
+  color: var(--clr-gray-500);
+  font-weight: var(--fw-500);
+}
+.xsm-txt {
+  color: var(--clr-gray-500);
+  font-weight: var(--fw-400);
+}
+
+p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* main view styling */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+/* Hero Section styling */
+.section-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.hero-title {
+  margin: .5rem 0;
+}
+.section-hero img {
+  width: 100%;
+  max-width: 85px;
+  margin-bottom: 2rem;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+/* Custome button Styling */
+.btns button {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-xsm);
+  align-items: center;
+  padding: .75rem 2.5rem;
+  height: 40px;
+  border: none;
+  border-bottom: 3px solid hsl(0, 0%, 8%, .2);
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px hsl(0, 0%, 8%, .1), 0 4px 6px -2px hsl(0, 0%, 8%, .05);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn-1 {
+  background-color: var(--clr-green-500);
+  color: white;
+}
+.btn-2 {
+  background-color: var(--clr-blue-100);
+  color: white;
+}
+
+.btn-1:hover, .btn-1:focus-visible {
+  background-color: hsl(171, 66%, 44%, .8);
+}
+.btn-2:hover, .btn-2:focus-visible {
+  background-color: hsl(233, 100%, 69%, .8);
+}
+
+/* "Keep track of your snippets" styling section */
+.section-snippets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.discrpt-txt {
+  display: block;
+  width: 591px;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 0rem;
+}
+
+.snippets-features {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4.5rem;
+  margin-top: 3rem;
+}
+
+.snippets-features img {
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+}
+
+.feature {
+display: flex;
+flex-direction: column;
+gap: .5rem;
+}
+
+/* "Access Clipboard anywhere" styling section */
+.section-access {
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.section-access img {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 3rem;
+}
+
+/* "Supercharge your workflow" styling section */
+.section-workflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 3rem;
+  gap: .4rem;
+}
+
+.workflow-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 900px;
+ margin-top: 2.5rem;
+}
+
+.workflow-feature {
+ line-height: 1.5;
+}
+.workflow-feature img {
+ width: 100%;
+ max-width: 30px;
+ margin-bottom: 1rem;
+}
+
+/* Companies logo styling section */
+.section-companies {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+.section-companies img {
+  width: 100%;
+  max-width: 100px;
+  height: 100%;
+}
+
+/* "Clipboard for iOS and Mac OS" styling section */
+.section-download {
+    width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+  margin-bottom: 3rem;
+}
+
+/* footer styling */
+footer {
+  margin-left: auto;
+  background-color: rgb(229, 229, 229);
+  color: var(--clr-gray-700);
+  font-weight: 400;
+  display: flex;  
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 110px;
+}
+footer img {
+  width: 100%;
+  max-width: 50px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-links a {
+  color: var(--clr-gray-700);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-600);
+}
+.footer-links a:hover {
+  color: var(--clr-green-500);
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+
+}
+
+/* For inline SVG icons styling*/
+.social a:hover path {
+  fill: var(--clr-green-500);
+}
+
+@media (max-width: 768px) {
+  body {
+    background: url(images/bg-header-mobile.png) no-repeat top center;
+    background-size: contain;
+    background-color: white;
+  }
+
+  main {
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .section-hero {
+    margin-bottom: 1rem;
+  }
+
+  .section-hero img {
+    max-width: 60px;
+    margin-bottom: 1.5rem;
+  }
+
+  .discrpt-txt {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btns button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .section-snippets {
+    margin-bottom: 1.5rem;
+  }
+
+  .snippets-features {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .snippets-features img {
+    max-width: 100%;
+  }
+
+  .features-list {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .feature {
+    text-align: center;
+  }
+
+  .section-access {
+    margin-bottom: 2rem;
+  }
+
+  .section-access img {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .section-workflow {
+    margin-bottom: 2rem;
+  }
+
+  .workflow-list {
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .workflow-feature {
+    text-align: center;
+  }
+
+  .workflow-feature img {
+    margin-bottom: 1rem;
+  }
+
+  .section-companies {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-companies img {
+    max-width: 100px;
+  }
+
+  .section-download {
+    max-width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  footer img {
+    max-width: 35px;
+  }
+
+  .footer-links {
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .social {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .social a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .discrpt-txt {
+    padding: 0 0.5rem;
+  }
+
+  .workflow-list {
+    padding: 0 0.5rem;
+  }
+
+  .section-companies {
+    padding: 0 0.5rem;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+}
+
